@@ -87,7 +87,6 @@
             font-weight: 600;
             color: var(--text);
             margin: 0;
-            letter-spacing: -0.01em;
             overflow-wrap: anywhere;
         }
 
@@ -117,7 +116,6 @@
             border-radius: 999px;
             border: 1px solid var(--border);
             background: var(--surface);
-            transition: background 0.15s;
         }
 
         .toggle-label:hover {
@@ -174,7 +172,6 @@
             background: var(--surface);
             color: var(--text);
             cursor: pointer;
-            transition: background 0.15s;
         }
 
         .key-btn:hover {
@@ -218,17 +215,7 @@
             color: var(--blue-ink);
         }
 
-        .api-input {
-            flex: 1 1 240px;
-            min-width: 180px;
-            padding: 8px 12px;
-            border: 1px solid #aecbfa;
-            border-radius: var(--radius-sm);
-            font-size: 13px;
-            background: #fff;
-            color: var(--text);
-        }
-
+        .api-input,
         .model-select {
             padding: 8px 10px;
             border: 1px solid #aecbfa;
@@ -236,6 +223,11 @@
             font-size: 13px;
             background: #fff;
             color: var(--text);
+        }
+
+        .api-input {
+            flex: 1 1 220px;
+            min-width: 170px;
         }
 
         .api-hint {
@@ -276,7 +268,6 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: color 0.15s, border-color 0.15s, background 0.15s;
         }
 
         .tab-btn:hover {
@@ -302,3 +293,2087 @@
             background: var(--blue-soft);
             color: var(--blue-ink);
         }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 20px 16px 40px;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 18px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 16px;
+        }
+
+        .card-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            color: var(--text);
+        }
+
+        .card-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 2px 0 0;
+        }
+
+        textarea.input-area {
+            width: 100%;
+            min-height: 200px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: var(--text);
+            background: #fff;
+            resize: vertical;
+        }
+
+        textarea.input-area.compact {
+            min-height: 110px;
+        }
+
+        textarea.input-area:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+        }
+
+        .action-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .meta-count {
+            font-size: 12.5px;
+            color: var(--text-secondary);
+        }
+
+        .btn-primary {
+            appearance: none;
+            border: none;
+            background: var(--blue);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 1px 2px rgba(26, 115, 232, 0.3);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: var(--blue-hover);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            appearance: none;
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 7px 13px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: var(--blue-soft);
+            border-color: #aecbfa;
+        }
+
+        .btn-secondary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .loading-box {
+            display: none;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border-radius: var(--radius);
+            background: var(--blue-soft);
+            border: 1px solid #d2e3fc;
+            color: var(--blue-ink);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .loading-box.visible {
+            display: flex;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2.5px solid #aecbfa;
+            border-top-color: var(--blue);
+            border-radius: 50%;
+            animation: spin 0.75s linear infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .error-box {
+            display: none;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 16px;
+            border-radius: var(--radius);
+            background: var(--red-soft);
+            border: 1px solid #f6aea9;
+            color: #a50e0e;
+            font-size: 13.5px;
+            margin-bottom: 16px;
+        }
+
+        .error-box.visible {
+            display: flex;
+        }
+
+        .error-close {
+            background: transparent;
+            border: none;
+            color: #a50e0e;
+            font-size: 18px;
+            line-height: 1;
+            cursor: pointer;
+            padding: 0 4px;
+        }
+
+        .feedback-context-banner {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 11px 14px;
+            border-radius: var(--radius-sm);
+            background: var(--amber-soft);
+            border: 1px solid #fdd663;
+            color: #8a4b00;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .feedback-context-banner.visible {
+            display: flex;
+        }
+
+        .section-heading {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin: 20px 0 12px;
+        }
+
+        .section-heading h3 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .clusters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 14px;
+        }
+
+        .cluster-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cluster-card.top-cluster {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 1px rgba(26, 115, 232, 0.25), var(--shadow-md);
+        }
+
+        .cluster-card.feedback-card {
+            border-color: #f9ab00;
+            background: #fffdf7;
+        }
+
+        .cluster-card.non-question {
+            background: #fafafa;
+            border-style: dashed;
+        }
+
+        .cluster-pills-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .cluster-rank {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--blue-ink);
+            background: var(--blue-soft);
+            padding: 3px 9px;
+            border-radius: 999px;
+        }
+
+        .cluster-card.feedback-card .cluster-rank {
+            background: var(--amber-soft);
+            color: #b06000;
+        }
+
+        .cluster-card.non-question .cluster-rank {
+            background: var(--surface-muted);
+            color: var(--text-secondary);
+        }
+
+        .cluster-count-pill {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--blue-ink);
+            background: var(--blue-soft);
+            padding: 3px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        .cluster-card.feedback-card .cluster-count-pill {
+            background: var(--amber-soft);
+            color: #b06000;
+        }
+
+        .cluster-card.non-question .cluster-count-pill {
+            background: var(--surface-muted);
+            color: var(--text-secondary);
+        }
+
+        .cluster-label {
+            font-size: 15.5px;
+            font-weight: 600;
+            margin: 0;
+            color: var(--text);
+            width: 100%;
+        }
+
+        .bar-track {
+            width: 100%;
+            height: 8px;
+            border-radius: 999px;
+            background: var(--surface-muted);
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 999px;
+            background: var(--blue);
+            transition: width 0.4s ease;
+        }
+
+        .cluster-card.feedback-card .bar-fill {
+            background: var(--amber);
+        }
+
+        .cluster-card.non-question .bar-fill {
+            background: #9aa0a6;
+        }
+
+        .cluster-summary {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .lang-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .lang-badge {
+            font-size: 11.5px;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: var(--surface-muted);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .examples-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .examples-list li {
+            font-size: 12.5px;
+            color: var(--text);
+            background: var(--bg);
+            padding: 7px 10px;
+            border-radius: var(--radius-sm);
+            border-left: 3px solid #aecbfa;
+        }
+
+        .cluster-card.feedback-card .examples-list li {
+            border-left-color: #fdd663;
+        }
+
+        .cluster-card.non-question .examples-list li {
+            border-left-color: #bdc1c6;
+        }
+
+        .next-video-card {
+            margin-top: 16px;
+            border: 1px solid #aecbfa;
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .next-video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .nv-block {
+            background: var(--bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+        }
+
+        .nv-label {
+            font-size: 11.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .nv-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .nv-outline {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 13.5px;
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .draft-badge {
+            font-size: 11px;
+            font-weight: 600;
+            color: #b06000;
+            background: var(--amber-soft);
+            border: 1px solid #fdd663;
+            padding: 2px 8px;
+            border-radius: 999px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .video-upload-box {
+            margin-top: 12px;
+            padding: 12px 14px;
+            border: 1px dashed var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--bg);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .video-info {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .video-preview-wrap {
+            margin-top: 12px;
+            display: none;
+        }
+
+        .video-preview-wrap.visible {
+            display: block;
+        }
+
+        .video-preview-wrap video {
+            max-width: 100%;
+            max-height: 220px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: #000;
+        }
+
+        .score-hero {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        @media (max-width: 640px) {
+            .score-hero {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .score-summary-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .score-circle {
+            width: 116px;
+            height: 116px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 6px solid var(--blue);
+            background: var(--blue-soft);
+        }
+
+        .score-circle.good {
+            border-color: var(--green);
+            background: var(--green-soft);
+        }
+
+        .score-circle.mid {
+            border-color: var(--amber);
+            background: var(--amber-soft);
+        }
+
+        .score-circle.low {
+            border-color: var(--red);
+            background: var(--red-soft);
+        }
+
+        .score-num {
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--text);
+        }
+
+        .score-caption {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .score-verdict-pill {
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 999px;
+        }
+
+        .score-verdict-pill.good {
+            background: var(--green-soft);
+            color: var(--green);
+        }
+
+        .score-verdict-pill.mid {
+            background: var(--amber-soft);
+            color: #b06000;
+        }
+
+        .score-verdict-pill.low {
+            background: var(--red-soft);
+            color: var(--red);
+        }
+
+        .signals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+            gap: 10px;
+        }
+
+        .signal-box {
+            padding: 10px 12px;
+            border-radius: var(--radius-sm);
+            background: var(--bg);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .signal-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12.5px;
+            font-weight: 600;
+            text-transform: capitalize;
+            margin-bottom: 6px;
+        }
+
+        .signal-bar {
+            height: 6px;
+            border-radius: 999px;
+            background: #e0e0e0;
+            overflow: hidden;
+        }
+
+        .signal-bar-fill {
+            height: 100%;
+            border-radius: 999px;
+            background: var(--blue);
+        }
+
+        .timeline-wrap {
+            margin-top: 10px;
+        }
+
+        .timeline-ruler {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .timeline-track {
+            position: relative;
+            min-height: 44px;
+            border-radius: var(--radius-sm);
+            background: var(--surface-muted);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .timeline-gridline {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(95, 99, 104, 0.2);
+            pointer-events: none;
+        }
+
+        .timeline-block {
+            position: absolute;
+            height: 28px;
+            border-radius: 6px;
+            padding: 0 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-block:hover,
+        .timeline-block:focus-visible {
+            filter: brightness(0.92);
+            z-index: 3;
+            outline: 2px solid var(--blue);
+        }
+
+        .timeline-block.conf-high {
+            background: var(--red);
+        }
+
+        .timeline-block.conf-medium {
+            background: var(--amber);
+        }
+
+        .timeline-hover-detail {
+            margin-top: 10px;
+            padding: 9px 12px;
+            border-radius: var(--radius-sm);
+            background: var(--bg);
+            border: 1px solid var(--border-subtle);
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-swatch {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table.issues-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+        }
+
+        .issues-table th,
+        .issues-table td {
+            text-align: left;
+            padding: 11px 12px;
+            border-bottom: 1px solid var(--border-subtle);
+            vertical-align: top;
+        }
+
+        .issues-table th {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-secondary);
+            background: var(--bg);
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 7px;
+            border-radius: 999px;
+            text-transform: capitalize;
+        }
+
+        .badge.high {
+            background: var(--red-soft);
+            color: var(--red);
+        }
+
+        .badge.medium {
+            background: var(--amber-soft);
+            color: #b06000;
+        }
+
+        .badge.signal {
+            background: var(--blue-soft);
+            color: var(--blue-ink);
+        }
+
+        .badge.early {
+            background: #fce8e6;
+            color: #a50e0e;
+        }
+
+        .evidence-text {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .check-this-card {
+            background: var(--surface-muted);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        .check-this-item {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 10px 12px;
+            margin-top: 10px;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .hooks-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+        }
+
+        .hook-option {
+            background: var(--bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .hook-option p {
+            margin: 0;
+            font-size: 13.5px;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            margin-top: 18px;
+            padding: 10px;
+        }
+
+        details.raw-json {
+            margin-top: 12px;
+            font-size: 12.5px;
+            color: var(--text-secondary);
+        }
+
+        details.raw-json pre {
+            background: #f1f3f4;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            overflow-x: auto;
+            font-size: 12px;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="app-header">
+        <div class="header-inner">
+            <div class="brand">
+                <div class="brand-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 12h3l2.5-6 4 12 3-8 2.5 2H22" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="brand-title" id="headerTitle">CreatorPulse · Python for Beginners (sample channel)</h1>
+                    <p class="brand-sub">CreatorPulse AI · Multilingual audience intelligence &amp; 5-second hook
+                        diagnostics</p>
+                </div>
+            </div>
+
+            <div class="header-controls">
+                <label class="toggle-label" for="ownDataToggle">
+                    <input type="checkbox" id="ownDataToggle" class="toggle-input" />
+                    <span class="toggle-track" aria-hidden="true"></span>
+                    <span>Use my own data</span>
+                </label>
+
+                <button type="button" class="key-btn" id="toggleKeyDrawerBtn">
+                    <span class="status-dot" id="apiKeyDot"></span>
+                    <span id="apiKeyBtnLabel">Ready (Server Proxy)</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="api-drawer" id="apiDrawer">
+            <div class="api-drawer-inner">
+                <label for="modelSelect">Model:</label>
+                <select id="modelSelect" class="model-select" aria-label="Gemini model">
+                    <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Fastest / High Availability)</option>
+                    <option value="gemini-3.6-flash">gemini-3.6-flash</option>
+                    <option value="gemini-2.5-flash">gemini-2.5-flash</option>
+                    <option value="gemini-3.8-flash">gemini-3.8-flash</option>
+                </select>
+                <label for="apiKeyInput">Optional override key:</label>
+                <input type="password" id="apiKeyInput" class="api-input"
+                    placeholder="Leave blank to use Vercel server GEMINI_API_KEY" autocomplete="off" />
+                <button type="button" class="btn-primary" id="saveKeyBtn"
+                    style="padding: 8px 14px; font-size: 13px;">Save</button>
+                <p class="api-hint">
+                    When hosted on Vercel, requests go securely through <code>/api/gemini</code> using your server-side
+                    <code>GEMINI_API_KEY</code>—no key entry needed for judges.
+                </p>
+            </div>
+        </div>
+
+        <nav class="tabs-bar" role="tablist" aria-label="CreatorPulse tools">
+            <div class="tabs-inner">
+                <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-tab="miner">
+                    <span>Comment Miner</span>
+                    <span class="tab-badge">Tab 1</span>
+                </button>
+                <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="doctor">
+                    <span>Hook Doctor</span>
+                    <span class="tab-badge">Tab 2</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="loading-box" id="loadingBox" role="status" aria-live="polite">
+            <div class="spinner" aria-hidden="true"></div>
+            <span id="loadingText">Working with Gemini...</span>
+        </div>
+
+        <div class="error-box" id="errorBox" role="alert">
+            <div id="errorText">Something went wrong.</div>
+            <button type="button" class="error-close" id="closeErrorBtn" aria-label="Dismiss error">&times;</button>
+        </div>
+
+        <section class="tab-panel active" id="panel-miner" role="tabpanel">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">Comment Miner</h2>
+                        <p class="card-subtitle">Groups viewer questions &amp; production feedback across English,
+                            Hinglish, and Tenglish, then ranks them in plain code.</p>
+                    </div>
+                    <button type="button" class="btn-secondary" id="resetSampleCommentsBtn" style="display:none;">Load
+                        sample comments</button>
+                </div>
+                <textarea id="commentsTextarea" class="input-area"
+                    placeholder="Paste your video comments here, one per line..."></textarea>
+                <div class="action-row">
+                    <span class="meta-count" id="commentCountLabel">40 comments loaded</span>
+                    <button type="button" class="btn-primary" id="mineCommentsBtn">Find what my audience is
+                        asking</button>
+                </div>
+            </div>
+            <div id="minerResults"></div>
+        </section>
+
+        <section class="tab-panel" id="panel-doctor" role="tabpanel">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">Hook Doctor</h2>
+                        <p class="card-subtitle">Gemini observes issues in your opening 0–5 seconds with evidence. Our
+                            deterministic rubric computes the Hook Score.</p>
+                    </div>
+                    <button type="button" class="btn-secondary" id="resetSampleHookBtn" style="display:none;">Load
+                        sample transcript</button>
+                </div>
+
+                <div class="feedback-context-banner" id="feedbackContextBanner">
+                    <span id="feedbackContextText"></span>
+                    <button type="button" class="error-close" id="clearFeedbackContextBtn" style="color:#8a4b00;"
+                        aria-label="Dismiss feedback note">&times;</button>
+                </div>
+
+                <textarea id="transcriptTextarea" class="input-area compact"
+                    placeholder="Paste your opening transcript with timestamps (0.0–5.0 s)..."></textarea>
+
+                <div class="video-upload-box">
+                    <div class="video-info">
+                        <strong>Optional:</strong> upload a short video (under 30 s) instead; sent to Gemini as video
+                        input.
+                        <div id="videoFileStatus" style="margin-top: 2px; color: var(--blue-ink); font-weight: 500;">
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <input type="file" id="videoFileInput" accept="video/*" style="display:none;" />
+                        <button type="button" class="btn-secondary" id="chooseVideoBtn">Upload short video (&lt; 30
+                            s)</button>
+                        <button type="button" class="btn-secondary" id="clearVideoBtn"
+                            style="display:none; color: var(--red);">Remove video</button>
+                    </div>
+                </div>
+
+                <div class="video-preview-wrap" id="videoPreviewWrap">
+                    <video id="videoPreview" controls playsinline></video>
+                </div>
+
+                <div class="action-row">
+                    <span class="meta-count" id="hookInputModeLabel">Mode: Opening transcript (0–5 s)</span>
+                    <button type="button" class="btn-primary" id="analyzeHookBtn">Diagnose my 5-second hook</button>
+                </div>
+            </div>
+
+            <div id="doctorResults"></div>
+            <p class="footer-note">Gemini observes, our rubric scores. An estimate with evidence, not a guarantee.</p>
+        </section>
+    </main>
+
+    <script>
+        const SAMPLE_COMMENTS = [
+            "How do I install Python on Windows?",
+            "Python install kaise kare laptop pe?",
+            "Windows lo Python setup ela cheyali bro?",
+            "Installation step skip ho gaya, please show again",
+            "Which Python version should I download?",
+            "Path error aa raha hai install ke baad",
+            "How do I start learning Python from zero?",
+            "Beginners ke liye Python easy hai kya?",
+            "Roadmap for Python please, I am confused where to start",
+            "Python nerchukovadaniki roadmap cheppandi",
+            "Which order should I learn topics in?",
+            "Is Python enough to get a job?",
+            "Suggest some beginner projects",
+            "Python ke baad kya banaye? Project ideas do",
+            "Small projects for practice cheppandi anna",
+            "Can you make a calculator project video?",
+            "Mini project ideas for college submission please",
+            "Which editor is best, VS Code or PyCharm?",
+            "VS Code setup video please",
+            "PyCharm ya VS Code, kaunsa better hai?",
+            "Great video bro!",
+            "Nice explanation, thank you",
+            "Super anna, chala baga cheppav",
+            "Check out my channel for free coins!!!",
+            "Subscribe to me for giveaways",
+            "Please make a video on loops",
+            "For loop samajh nahi aaya, ek aur example do",
+            "While loop vs for loop difference?",
+            "Loops meeda inko video kavali",
+            "Your audio is low in the first part",
+            "Background noise bahut hai",
+            "Can you speak a little slower?",
+            "Thoda slow bolo bhai",
+            "Notes or PDF milega kya?",
+            "Please share the code in description",
+            "Code link pettandi description lo",
+            "How long will it take to learn Python?",
+            "Kitne din mein Python seekh sakte hai?",
+            "Can I learn Python on my phone?",
+            "Mobile pe Python chal sakta hai?"
+        ].join("\n");
+
+        const SAMPLE_TRANSCRIPT = [
+            '0.0–1.5 s: "Hey guys, welcome back to my channel."',
+            '1.5–3.0 s: "Today, in this video, we are going to learn Python, so let\'s get started."',
+            '3.0–5.0 s: (screen shows VS Code opening) "First let me open my editor..."'
+        ].join("\n");
+
+        const FALLBACK_MODELS = [
+            "gemini-3.5-flash-lite",
+            "gemini-3.6-flash",
+            "gemini-2.5-flash",
+            "gemini-3.8-flash"
+        ];
+
+        const isHttpHosted = window.location.protocol === "http:" || window.location.protocol === "https:";
+        const storedModel = localStorage.getItem("creatorpulse_gemini_model");
+        const state = {
+            apiKey: localStorage.getItem("creatorpulse_gemini_key") || "",
+            model: FALLBACK_MODELS.includes(storedModel) ? storedModel : "gemini-3.5-flash-lite",
+            useOwnData: false,
+            customComments: "",
+            customTranscript: "",
+            uploadedVideoFile: null,
+            uploadedVideoDuration: null,
+            uploadedVideoUrl: null,
+            feedbackContext: null
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("key")) state.apiKey = urlParams.get("key").trim();
+
+        const headerTitle = document.getElementById("headerTitle");
+        const ownDataToggle = document.getElementById("ownDataToggle");
+        const toggleKeyDrawerBtn = document.getElementById("toggleKeyDrawerBtn");
+        const apiDrawer = document.getElementById("apiDrawer");
+        const apiKeyInput = document.getElementById("apiKeyInput");
+        const modelSelect = document.getElementById("modelSelect");
+        const saveKeyBtn = document.getElementById("saveKeyBtn");
+        const apiKeyDot = document.getElementById("apiKeyDot");
+        const apiKeyBtnLabel = document.getElementById("apiKeyBtnLabel");
+
+        const loadingBox = document.getElementById("loadingBox");
+        const loadingText = document.getElementById("loadingText");
+        const errorBox = document.getElementById("errorBox");
+        const errorText = document.getElementById("errorText");
+        const closeErrorBtn = document.getElementById("closeErrorBtn");
+
+        const commentsTextarea = document.getElementById("commentsTextarea");
+        const commentCountLabel = document.getElementById("commentCountLabel");
+        const mineCommentsBtn = document.getElementById("mineCommentsBtn");
+        const resetSampleCommentsBtn = document.getElementById("resetSampleCommentsBtn");
+        const minerResults = document.getElementById("minerResults");
+
+        const transcriptTextarea = document.getElementById("transcriptTextarea");
+        const resetSampleHookBtn = document.getElementById("resetSampleHookBtn");
+        const feedbackContextBanner = document.getElementById("feedbackContextBanner");
+        const feedbackContextText = document.getElementById("feedbackContextText");
+        const clearFeedbackContextBtn = document.getElementById("clearFeedbackContextBtn");
+        const videoFileInput = document.getElementById("videoFileInput");
+        const chooseVideoBtn = document.getElementById("chooseVideoBtn");
+        const clearVideoBtn = document.getElementById("clearVideoBtn");
+        const videoFileStatus = document.getElementById("videoFileStatus");
+        const videoPreviewWrap = document.getElementById("videoPreviewWrap");
+        const videoPreview = document.getElementById("videoPreview");
+        const hookInputModeLabel = document.getElementById("hookInputModeLabel");
+        const analyzeHookBtn = document.getElementById("analyzeHookBtn");
+        const doctorResults = document.getElementById("doctorResults");
+
+        function init() {
+            commentsTextarea.value = SAMPLE_COMMENTS;
+            transcriptTextarea.value = SAMPLE_TRANSCRIPT;
+            apiKeyInput.value = state.apiKey;
+            modelSelect.value = state.model;
+            updateKeyStatusUI();
+            updateCommentCount();
+            bindEvents();
+        }
+
+        function updateKeyStatusUI() {
+            if (state.apiKey) {
+                apiKeyDot.classList.add("ready");
+                apiKeyBtnLabel.textContent = "Custom Key Active";
+            } else if (isHttpHosted) {
+                apiKeyDot.classList.add("ready");
+                apiKeyBtnLabel.textContent = "Server Proxy Ready";
+            } else {
+                apiKeyDot.classList.remove("ready");
+                apiKeyBtnLabel.textContent = "Set Gemini API Key";
+            }
+        }
+
+        function showLoading(message) {
+            hideError();
+            loadingText.textContent = message;
+            loadingBox.classList.add("visible");
+            mineCommentsBtn.disabled = true;
+            analyzeHookBtn.disabled = true;
+            const nvBtn = document.getElementById("makeNextVideoBtn");
+            if (nvBtn) nvBtn.disabled = true;
+        }
+
+        function hideLoading() {
+            loadingBox.classList.remove("visible");
+            mineCommentsBtn.disabled = false;
+            analyzeHookBtn.disabled = false;
+            const nvBtn = document.getElementById("makeNextVideoBtn");
+            if (nvBtn) nvBtn.disabled = false;
+        }
+
+        function showError(message) {
+            errorText.textContent = message;
+            errorBox.classList.add("visible");
+        }
+
+        function hideError() { errorBox.classList.remove("visible"); }
+
+        function escapeHtml(str) {
+            return String(str ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll(".tab-btn").forEach(b => {
+                const active = b.getAttribute("data-tab") === tabName;
+                b.classList.toggle("active", active);
+                b.setAttribute("aria-selected", String(active));
+            });
+            document.querySelectorAll(".tab-panel").forEach(panel => {
+                panel.classList.toggle("active", panel.id === `panel-${tabName}`);
+            });
+            hideError();
+        }
+
+        function getParsedComments() {
+            return commentsTextarea.value.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+        }
+
+        function updateCommentCount() {
+            const count = getParsedComments().length;
+            commentCountLabel.textContent = `${count} comment${count === 1 ? "" : "s"} ready`;
+        }
+
+        function shouldUseServerProxy() {
+            const customKey = (apiKeyInput.value || state.apiKey || "").trim();
+            return !customKey && isHttpHosted;
+        }
+
+        async function callSingleGeminiModel({ model, parts, responseSchema, systemInstruction }) {
+            const payload = {
+                contents: [{ role: "user", parts }],
+                generationConfig: {
+                    responseMimeType: "application/json",
+                    responseSchema
+                }
+            };
+            if (systemInstruction) {
+                payload.systemInstruction = { parts: [{ text: systemInstruction }] };
+            }
+
+            const customKey = (apiKeyInput.value || state.apiKey || "").trim();
+            let response;
+
+            try {
+                if (customKey) {
+                    const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
+                    response = await fetch(url, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json", "x-goog-api-key": customKey },
+                        body: JSON.stringify(payload)
+                    });
+                } else if (isHttpHosted) {
+                    response = await fetch("/api/gemini", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ model, payload })
+                    });
+                } else {
+                    apiDrawer.classList.add("open");
+                    const err = new Error("Open via your Vercel URL or enter a Gemini API key in Settings.");
+                    err.transient = false;
+                    throw err;
+                }
+            } catch (err) {
+                if (err && err.transient === false) throw err;
+                const netErr = new Error("Could not reach the API. Check your internet connection and try again.");
+                netErr.transient = false;
+                throw netErr;
+            }
+
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok) {
+                const msg = data?.error?.message || `API returned HTTP ${response.status}.`;
+                const err = new Error(msg);
+                err.status = response.status;
+                if (msg.includes("GEMINI_API_KEY is not configured")) {
+                    err.message = "Vercel server is missing GEMINI_API_KEY. Add it in Vercel Project Settings → Environment Variables and redeploy.";
+                    err.transient = false;
+                    throw err;
+                }
+                err.transient = response.status === 503 || response.status === 500 || response.status === 429 ||
+                    response.status === 404 ||
+                    /high demand|unavailable|overloaded|capacity|try again/i.test(msg);
+                if (response.status === 400 && msg.toLowerCase().includes("api key")) {
+                    err.message = "The Gemini API key looks invalid. Please check GEMINI_API_KEY in Vercel or the optional key field.";
+                    err.transient = false;
+                }
+                throw err;
+            }
+
+            const candidateParts = data?.candidates?.[0]?.content?.parts || [];
+            const textPart = candidateParts.find(p => !p.thought && typeof p.text === "string");
+            if (!textPart) {
+                const err = new Error("Gemini returned an empty response.");
+                err.transient = true;
+                throw err;
+            }
+
+            let rawText = textPart.text.trim();
+            if (rawText.startsWith("```")) {
+                rawText = rawText.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "");
+            }
+
+            try {
+                return { data: JSON.parse(rawText), usedModel: model };
+            } catch (e) {
+                const err = new Error("Gemini returned malformed JSON.");
+                err.transient = true;
+                throw err;
+            }
+        }
+
+        async function callGeminiJSON({ parts, responseSchema, systemInstruction }) {
+            const primary = state.model || "gemini-3.5-flash-lite";
+            const candidates = [primary, ...FALLBACK_MODELS.filter(m => m !== primary)];
+            let lastError = null;
+
+            for (let i = 0; i < candidates.length; i++) {
+                const model = candidates[i];
+                try {
+                    if (i > 0) {
+                        loadingText.textContent = `Previous model is busy — trying ${model} automatically...`;
+                    }
+                    return await callSingleGeminiModel({ model, parts, responseSchema, systemInstruction });
+                } catch (err) {
+                    lastError = err;
+                    if (!err.transient) throw err;
+                    await new Promise(r => setTimeout(r, 900));
+                }
+            }
+            throw new Error(`Gemini error: ${lastError?.message || "Models are temporarily busy. Please try again shortly."}`);
+        }
+
+        async function uploadVideoToGemini(file) {
+            const customKey = (apiKeyInput.value || state.apiKey || "").trim();
+            let uploadUrl = null;
+
+            if (customKey) {
+                const initRes = await fetch("https://generativelanguage.googleapis.com/upload/v1beta/files", {
+                    method: "POST",
+                    headers: {
+                        "x-goog-api-key": customKey,
+                        "X-Goog-Upload-Protocol": "resumable",
+                        "X-Goog-Upload-Command": "start",
+                        "X-Goog-Upload-Header-Content-Length": String(file.size),
+                        "X-Goog-Upload-Header-Content-Type": file.type || "video/mp4",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ file: { display_name: file.name || "hook-clip" } })
+                });
+                if (!initRes.ok) throw new Error("Failed to initialize video upload to Gemini Files API.");
+                uploadUrl = initRes.headers.get("X-Goog-Upload-URL");
+            } else {
+                const initRes = await fetch("/api/gemini", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        action: "init_upload",
+                        fileSize: file.size,
+                        mimeType: file.type || "video/mp4",
+                        fileName: file.name || "hook-clip"
+                    })
+                });
+                const initData = await initRes.json().catch(() => ({}));
+                if (!initRes.ok || !initData.uploadUrl) {
+                    throw new Error(initData?.error?.message || "Failed to start video upload via server proxy.");
+                }
+                uploadUrl = initData.uploadUrl;
+            }
+
+            const uploadRes = await fetch(uploadUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Length": String(file.size),
+                    "X-Goog-Upload-Offset": "0",
+                    "X-Goog-Upload-Command": "upload, finalize"
+                },
+                body: file
+            });
+            if (!uploadRes.ok) throw new Error("Video upload to Gemini failed. Try a smaller clip.");
+
+            const uploaded = await uploadRes.json();
+            let fileObj = uploaded.file;
+
+            for (let i = 0; i < 20; i++) {
+                if (fileObj.state === "ACTIVE") return fileObj;
+                if (fileObj.state === "FAILED") throw new Error("Gemini failed to process the uploaded video.");
+                await new Promise(r => setTimeout(r, 1500));
+                if (customKey) {
+                    const checkRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/${fileObj.name}`, {
+                        headers: { "x-goog-api-key": customKey }
+                    });
+                    if (checkRes.ok) fileObj = await checkRes.json();
+                } else {
+                    const checkRes = await fetch("/api/gemini", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ action: "poll_file", name: fileObj.name })
+                    });
+                    if (checkRes.ok) fileObj = await checkRes.json();
+                }
+            }
+            throw new Error("Video processing timed out. Try a shorter clip.");
+        }
+
+        async function deleteUploadedGeminiFile(fileName) {
+            const customKey = (apiKeyInput.value || state.apiKey || "").trim();
+            if (customKey) {
+                fetch(`https://generativelanguage.googleapis.com/v1beta/${fileName}`, {
+                    method: "DELETE",
+                    headers: { "x-goog-api-key": customKey }
+                }).catch(() => { });
+            } else if (isHttpHosted) {
+                fetch("/api/gemini", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ action: "delete_file", name: fileName })
+                }).catch(() => { });
+            }
+        }
+
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const result = String(reader.result || "");
+                    const commaIdx = result.indexOf(",");
+                    resolve(commaIdx >= 0 ? result.slice(commaIdx + 1) : result);
+                };
+                reader.onerror = () => reject(new Error("Could not read the selected video file."));
+                reader.readAsDataURL(file);
+            });
+        }
+
+        const COMMENT_CLUSTERS_SCHEMA = {
+            type: "OBJECT",
+            properties: {
+                clusters: {
+                    type: "ARRAY",
+                    items: {
+                        type: "OBJECT",
+                        properties: {
+                            label: { type: "STRING" },
+                            summary: { type: "STRING" },
+                            comment_indexes: { type: "ARRAY", items: { type: "INTEGER" } },
+                            language_mix: { type: "ARRAY", items: { type: "STRING", enum: ["English", "Hinglish", "Tenglish"] } },
+                            is_question: { type: "BOOLEAN" }
+                        },
+                        required: ["label", "summary", "comment_indexes", "language_mix", "is_question"]
+                    }
+                }
+            },
+            required: ["clusters"]
+        };
+
+        const NEXT_VIDEO_SCHEMA = {
+            type: "OBJECT",
+            properties: {
+                title: { type: "STRING" },
+                hook_line: { type: "STRING" },
+                outline: { type: "ARRAY", items: { type: "STRING" }, minItems: 5, maxItems: 5 },
+                reply_draft: { type: "STRING" }
+            },
+            required: ["title", "hook_line", "outline", "reply_draft"]
+        };
+
+        async function handleMineComments() {
+            const comments = getParsedComments();
+            if (comments.length === 0) {
+                showError("Please enter at least one comment before mining.");
+                return;
+            }
+
+            const indexedList = comments.map((c, idx) => `[${idx}] ${c}`).join("\n");
+            const prompt = [
+                "Analyze these viewer comments from a YouTube creator's video.",
+                "Group comments that share the SAME underlying question, topic, or feedback even when written in different languages (English, Hinglish, or Tenglish).",
+                "Rules for is_question and labels:",
+                "1) Viewer questions and topic/resource requests -> set is_question: true, with a concise 3-6 word topic label.",
+                "2) Delivery/production feedback complaints (such as audio volume, background noise, mic quality, speaking speed/pacing, video clarity) -> set is_question: false, with a clear descriptive label (e.g., 'Audio quality & background noise', 'Speaking pace & delivery'). Do NOT label these 'Not a question'.",
+                "3) All spam, self-promotion, and pure praise/compliments -> put into ONE cluster labeled exactly 'Not a question' with is_question: false.",
+                `Assign EVERY comment index from 0 to ${comments.length - 1} to exactly one cluster. Do not invent indexes.`,
+                "Use language_mix values only from [\"English\", \"Hinglish\", \"Tenglish\"] reflecting the languages present in that cluster.",
+                "\nCOMMENTS:\n" + indexedList
+            ].join("\n");
+
+            showLoading(`Clustering ${comments.length} comments with ${state.model}...`);
+            try {
+                const { data: result, usedModel } = await callGeminiJSON({
+                    parts: [{ text: prompt }],
+                    responseSchema: COMMENT_CLUSTERS_SCHEMA
+                });
+                const processed = processAndRankClusters(result.clusters || [], comments);
+                renderMinerResults(processed, comments, result, usedModel);
+            } catch (err) {
+                showError(err.message);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        function looksLikeProductionFeedback(label, summary, commentTexts) {
+            const text = `${label} ${summary} ${commentTexts.join(" ")}`.toLowerCase();
+            return /\b(audio|volume|noise|mic|microphone|sound|slow|slower|fast|faster|pacing|speak|speaking|speed)\b/.test(text) &&
+                !/\b(install|python|setup|roadmap|project|loop|editor|code|pdf|notes|phone|mobile|job)\b/.test(label.toLowerCase());
+        }
+
+        function processAndRankClusters(rawClusters, comments) {
+            const seenIndexes = new Set();
+            const questionClusters = [];
+            const feedbackClusters = [];
+            let notAQuestionCluster = null;
+
+            for (const raw of rawClusters) {
+                const cleanIndexes = [];
+                for (const idx of (raw.comment_indexes || [])) {
+                    if (Number.isInteger(idx) && idx >= 0 && idx < comments.length && !seenIndexes.has(idx)) {
+                        seenIndexes.add(idx);
+                        cleanIndexes.push(idx);
+                    }
+                }
+                if (cleanIndexes.length === 0) continue;
+
+                const label = String(raw.label || "").trim() || "Viewer cluster";
+                const summary = String(raw.summary || "").trim();
+                const langSet = Array.from(new Set((raw.language_mix || []).filter(l => ["English", "Hinglish", "Tenglish"].includes(l))));
+                const langs = langSet.length ? langSet : ["English"];
+                const exampleTexts = cleanIndexes.map(i => comments[i]);
+
+                const isNotQuestionBucket = label.toLowerCase() === "not a question";
+                const isFeedback = !isNotQuestionBucket && (raw.is_question === false || looksLikeProductionFeedback(label, summary, exampleTexts));
+
+                if (isNotQuestionBucket) {
+                    if (!notAQuestionCluster) {
+                        notAQuestionCluster = { label: "Not a question", summary: summary || "Praise, compliments, and spam.", comment_indexes: cleanIndexes, language_mix: langs, is_question: false, count: 0 };
+                    } else {
+                        notAQuestionCluster.comment_indexes.push(...cleanIndexes);
+                        notAQuestionCluster.language_mix = Array.from(new Set([...notAQuestionCluster.language_mix, ...langs]));
+                    }
+                } else if (isFeedback) {
+                    feedbackClusters.push({ label, summary, comment_indexes: cleanIndexes, language_mix: langs, is_question: false, is_feedback: true, count: cleanIndexes.length });
+                } else {
+                    questionClusters.push({ label, summary, comment_indexes: cleanIndexes, language_mix: langs, is_question: true, count: cleanIndexes.length });
+                }
+            }
+
+            const ungrouped = [];
+            for (let i = 0; i < comments.length; i++) {
+                if (!seenIndexes.has(i)) ungrouped.push(i);
+            }
+            if (ungrouped.length > 0) {
+                if (!notAQuestionCluster) {
+                    notAQuestionCluster = { label: "Not a question", summary: "Other uncategorized comments.", comment_indexes: ungrouped, language_mix: ["English"], is_question: false, count: ungrouped.length };
+                } else {
+                    notAQuestionCluster.comment_indexes.push(...ungrouped);
+                }
+            }
+            if (notAQuestionCluster) notAQuestionCluster.count = notAQuestionCluster.comment_indexes.length;
+
+            questionClusters.sort((a, b) => b.count - a.count);
+            feedbackClusters.sort((a, b) => b.count - a.count);
+            return { questionClusters, feedbackClusters, notAQuestionCluster };
+        }
+
+        function renderMinerResults(processed, comments, rawJson, usedModel) {
+            const { questionClusters, feedbackClusters, notAQuestionCluster } = processed;
+            const maxCount = Math.max(1, ...questionClusters.map(c => c.count), ...feedbackClusters.map(c => c.count), notAQuestionCluster ? notAQuestionCluster.count : 0);
+
+            let html = `
+        <div class="section-heading">
+          <h3>Ranked Audience Questions (${questionClusters.length} topic${questionClusters.length === 1 ? "" : "s"})</h3>
+          <span class="meta-count">Counts &amp; ranking in plain JS · ${comments.length} comments · Model: ${escapeHtml(usedModel)}</span>
+        </div>
+        <div class="clusters-grid">
+      `;
+
+            questionClusters.forEach((cluster, idx) => {
+                const isTop = idx === 0;
+                const pct = Math.round((cluster.count / maxCount) * 100);
+                const examples = cluster.comment_indexes.slice(0, 3).map(i => comments[i]);
+                html += `
+          <article class="cluster-card ${isTop ? "top-cluster" : ""}">
+            <div class="cluster-pills-row">
+              <span class="cluster-rank">${isTop ? "#1 Question" : `#${idx + 1} Question`}</span>
+              <span class="cluster-count-pill">${cluster.count} comment${cluster.count === 1 ? "" : "s"}</span>
+            </div>
+            <h4 class="cluster-label">${escapeHtml(cluster.label)}</h4>
+            <div class="bar-track"><div class="bar-fill" style="width: ${pct}%;"></div></div>
+            <p class="cluster-summary">${escapeHtml(cluster.summary)}</p>
+            <div class="lang-row">${cluster.language_mix.map(l => `<span class="lang-badge">${escapeHtml(l)}</span>`).join("")}</div>
+            <ul class="examples-list">${examples.map(ex => `<li>"${escapeHtml(ex)}"</li>`).join("")}</ul>
+            ${isTop ? `<div style="margin-top: auto; padding-top: 6px;"><button type="button" class="btn-primary" id="makeNextVideoBtn" style="width: 100%; justify-content: center;">Make my next video</button></div>` : ""}
+          </article>
+        `;
+            });
+
+            feedbackClusters.forEach((cluster, idx) => {
+                const pct = Math.round((cluster.count / maxCount) * 100);
+                const examples = cluster.comment_indexes.slice(0, 3).map(i => comments[i]);
+                html += `
+          <article class="cluster-card feedback-card">
+            <div class="cluster-pills-row">
+              <span class="cluster-rank">Feedback</span>
+              <span class="cluster-count-pill">${cluster.count} comment${cluster.count === 1 ? "" : "s"}</span>
+            </div>
+            <h4 class="cluster-label">${escapeHtml(cluster.label)}</h4>
+            <div class="bar-track"><div class="bar-fill" style="width: ${pct}%;"></div></div>
+            <p class="cluster-summary">${escapeHtml(cluster.summary)}</p>
+            <div class="lang-row">${cluster.language_mix.map(l => `<span class="lang-badge">${escapeHtml(l)}</span>`).join("")}</div>
+            <ul class="examples-list">${examples.map(ex => `<li>"${escapeHtml(ex)}"</li>`).join("")}</ul>
+            <div style="margin-top: auto; padding-top: 6px;">
+              <button type="button" class="btn-secondary check-hook-feedback-btn" data-feedback-idx="${idx}" style="width: 100%; justify-content: center;">Check this in Hook Doctor</button>
+            </div>
+          </article>
+        `;
+            });
+
+            if (notAQuestionCluster) {
+                const pct = Math.round((notAQuestionCluster.count / maxCount) * 100);
+                const examples = notAQuestionCluster.comment_indexes.slice(0, 3).map(i => comments[i]);
+                html += `
+          <article class="cluster-card non-question">
+            <div class="cluster-pills-row">
+              <span class="cluster-rank">Not a question</span>
+              <span class="cluster-count-pill">${notAQuestionCluster.count} comment${notAQuestionCluster.count === 1 ? "" : "s"}</span>
+            </div>
+            <h4 class="cluster-label">${escapeHtml(notAQuestionCluster.label)}</h4>
+            <div class="bar-track"><div class="bar-fill" style="width: ${pct}%;"></div></div>
+            <p class="cluster-summary">${escapeHtml(notAQuestionCluster.summary)}</p>
+            <div class="lang-row">${notAQuestionCluster.language_mix.map(l => `<span class="lang-badge">${escapeHtml(l)}</span>`).join("")}</div>
+            <ul class="examples-list">${examples.map(ex => `<li>"${escapeHtml(ex)}"</li>`).join("")}</ul>
+          </article>
+        `;
+            }
+
+            html += `</div><div id="nextVideoContainer"></div>`;
+            html += `<details class="raw-json"><summary>View raw Gemini JSON (clustering output)</summary><pre>${escapeHtml(JSON.stringify(rawJson, null, 2))}</pre></details>`;
+            minerResults.innerHTML = html;
+
+            const nvBtn = document.getElementById("makeNextVideoBtn");
+            if (nvBtn && questionClusters.length > 0) {
+                nvBtn.addEventListener("click", () => handleMakeNextVideo(questionClusters[0], comments));
+            }
+            minerResults.querySelectorAll(".check-hook-feedback-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const fb = feedbackClusters[Number(btn.getAttribute("data-feedback-idx"))];
+                    if (!fb) return;
+                    const sampleQuotes = fb.comment_indexes.slice(0, 3).map(i => `"${comments[i]}"`).join("; ");
+                    state.feedbackContext = `${fb.label}: ${sampleQuotes}`;
+                    feedbackContextText.textContent = `Checking audience feedback from Comment Miner — ${state.feedbackContext}`;
+                    feedbackContextBanner.classList.add("visible");
+                    switchTab("doctor");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            });
+        }
+
+        async function handleMakeNextVideo(topCluster, comments) {
+            const clusterComments = topCluster.comment_indexes.map(i => `- ${comments[i]}`).join("\n");
+            const prompt = [
+                `The #1 most-asked audience topic is: "${topCluster.label}" (${topCluster.count} comments).`,
+                `Summary: ${topCluster.summary}`,
+                `Languages represented: ${topCluster.language_mix.join(", ")}`,
+                "Actual viewer comments:",
+                clusterComments,
+                "",
+                "Generate a next-video blueprint in JSON with:",
+                "- title: clickable, clear beginner-friendly YouTube video title",
+                "- hook_line: punchy 1-2 sentence opening hook (under 5 seconds) addressing the exact pain point immediately",
+                "- outline: array of EXACTLY 5 concise section strings",
+                "- reply_draft: warm pinned comment / reply letting viewers know the follow-up video is coming"
+            ].join("\n");
+
+            showLoading(`Scripting your next video for "${topCluster.label}"...`);
+            try {
+                const { data: plan } = await callGeminiJSON({ parts: [{ text: prompt }], responseSchema: NEXT_VIDEO_SCHEMA });
+                renderNextVideoPlan(plan, topCluster);
+            } catch (err) {
+                showError(err.message);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        function renderNextVideoPlan(plan, topCluster) {
+            const container = document.getElementById("nextVideoContainer");
+            if (!container) return;
+            const outlineItems = (plan.outline || []).slice(0, 5);
+            container.innerHTML = `
+        <div class="next-video-card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Next Video Blueprint · ${escapeHtml(topCluster.label)}</h3>
+              <p class="card-subtitle">Generated from your #1 ranked viewer cluster (${topCluster.count} comments)</p>
+            </div>
+          </div>
+          <div class="next-video-grid">
+            <div class="nv-block"><div class="nv-label">Suggested Title</div><p class="nv-value">${escapeHtml(plan.title)}</p></div>
+            <div class="nv-block"><div class="nv-label">Opening Hook Line (0–5 s)</div><p class="nv-value" style="font-weight: 500;">"${escapeHtml(plan.hook_line)}"</p></div>
+            <div class="nv-block"><div class="nv-label">5-Part Video Outline</div><ol class="nv-outline">${outlineItems.map(step => `<li>${escapeHtml(step)}</li>`).join("")}</ol></div>
+            <div class="nv-block">
+              <div class="nv-label"><span>Suggested Pinned Reply</span><span class="draft-badge">Draft — post only after you approve</span></div>
+              <p style="margin: 0 0 10px; font-size: 13.5px;">${escapeHtml(plan.reply_draft)}</p>
+              <button type="button" class="btn-secondary" id="copyReplyBtn">Copy reply draft</button>
+            </div>
+          </div>
+        </div>
+      `;
+            const copyBtn = document.getElementById("copyReplyBtn");
+            copyBtn.addEventListener("click", () => {
+                navigator.clipboard?.writeText(plan.reply_draft || "");
+                copyBtn.textContent = "Copied!";
+                setTimeout(() => { copyBtn.textContent = "Copy reply draft"; }, 1800);
+            });
+            container.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+
+        const HOOK_OBSERVATIONS_SCHEMA = {
+            type: "OBJECT",
+            properties: {
+                observations: {
+                    type: "ARRAY",
+                    items: {
+                        type: "OBJECT",
+                        properties: {
+                            start_s: { type: "NUMBER" },
+                            end_s: { type: "NUMBER" },
+                            signal: { type: "STRING", enum: ["clarity", "curiosity", "visuals", "pacing", "relevance", "audio"] },
+                            issue: { type: "STRING" },
+                            evidence: { type: "STRING" },
+                            confidence: { type: "STRING", enum: ["high", "medium", "low"] },
+                            suggested_fix: { type: "STRING" }
+                        },
+                        required: ["start_s", "end_s", "signal", "issue", "evidence", "confidence", "suggested_fix"]
+                    }
+                },
+                alternative_hooks: { type: "ARRAY", items: { type: "STRING" }, minItems: 3, maxItems: 3 }
+            },
+            required: ["observations", "alternative_hooks"]
+        };
+
+        const SIGNALS = ["clarity", "curiosity", "visuals", "pacing", "relevance", "audio"];
+
+        function computeHookScore(observations) {
+            let totalPenalty = 0;
+            const signalScores = {};
+            for (const s of SIGNALS) signalScores[s] = 100;
+
+            for (const obs of observations) {
+                let basePenalty = 0;
+                if (obs.confidence === "high") basePenalty = 15;
+                else if (obs.confidence === "medium") basePenalty = 7;
+
+                const start = Number(obs.start_s);
+                const multiplier = (Number.isFinite(start) && start < 1.5) ? 1.5 : 1;
+                const weightedPenalty = basePenalty * multiplier;
+                totalPenalty += weightedPenalty;
+
+                if (Object.prototype.hasOwnProperty.call(signalScores, obs.signal) && basePenalty > 0) {
+                    signalScores[obs.signal] = Math.max(0, Math.round(signalScores[obs.signal] - weightedPenalty));
+                }
+            }
+
+            const hookScore = Math.max(0, Math.round(100 - totalPenalty));
+            let verdict = "Weak";
+            let scoreClass = "low";
+            if (hookScore >= 75) { verdict = "Strong"; scoreClass = "good"; }
+            else if (hookScore >= 50) { verdict = "Needs work"; scoreClass = "mid"; }
+
+            return { hookScore, verdict, scoreClass, signalScores };
+        }
+
+        async function handleAnalyzeHook() {
+            const hasVideo = Boolean(state.uploadedVideoFile);
+            const transcript = transcriptTextarea.value.trim();
+
+            if (!hasVideo && !transcript) {
+                showError("Please enter an opening transcript or upload a short video (under 30 s).");
+                return;
+            }
+
+            const feedbackNote = state.feedbackContext
+                ? `\nAudience feedback reported by viewers to specifically check for (mark low confidence if not directly observable):\n${state.feedbackContext}`
+                : "";
+
+            const baseInstructions = [
+                "You are observing the opening 0.0 to 5.0 seconds of a YouTube video hook.",
+                "IMPORTANT: Do NOT output any numerical score or rating. Only report concrete observations with timestamps and evidence.",
+                "Evaluate across these six signals: clarity, curiosity, visuals, pacing, relevance, audio.",
+                "For each issue observed in 0.0–5.0 s, provide:",
+                "- start_s and end_s (numbers between 0 and 5)",
+                "- signal: one of clarity | curiosity | visuals | pacing | relevance | audio",
+                "- issue: short factual statement of the problem",
+                "- evidence: exact quote, visual cue, or audio cue you observed",
+                "- confidence: 'high' (clearly evidenced defect), 'medium' (notable weakness with direct evidence), or 'low' (unverified/inferred—for example, if analyzing text-only transcript and audio quality/visual polish isn't directly observable)",
+                "- suggested_fix: specific actionable edit for that timestamp",
+                "Also provide 3 strong alternative_hooks (each speakable in under 5 seconds).",
+                feedbackNote
+            ].join("\n");
+
+            let parts = [];
+            let uploadedFileRef = null;
+
+            try {
+                if (hasVideo) {
+                    const file = state.uploadedVideoFile;
+                    // Keep JSON inline payloads <= ~4 MB so Vercel serverless body limit (4.5 MB) is respected
+                    if (file.size <= 3 * 1024 * 1024) {
+                        showLoading(`Encoding video and observing 0–5 s hook with ${state.model}...`);
+                        const base64Data = await fileToBase64(file);
+                        parts.push({ inlineData: { mimeType: file.type || "video/mp4", data: base64Data } });
+                    } else {
+                        showLoading("Uploading video to Gemini Files API...");
+                        uploadedFileRef = await uploadVideoToGemini(file);
+                        parts.push({ fileData: { mimeType: uploadedFileRef.mimeType || file.type || "video/mp4", fileUri: uploadedFileRef.uri } });
+                    }
+                    parts.push({ text: baseInstructions + (transcript ? `\nOptional creator context/transcript:\n${transcript}` : "") });
+                } else {
+                    showLoading(`Observing 0–5 s opening transcript with ${state.model}...`);
+                    parts.push({ text: `${baseInstructions}\n\nOPENING TRANSCRIPT:\n${transcript}` });
+                }
+
+                const { data: result, usedModel } = await callGeminiJSON({ parts, responseSchema: HOOK_OBSERVATIONS_SCHEMA });
+                const observations = Array.isArray(result.observations) ? result.observations : [];
+                const altHooks = Array.isArray(result.alternative_hooks) ? result.alternative_hooks.slice(0, 3) : [];
+                const scoring = computeHookScore(observations);
+
+                renderHookResults({ observations, altHooks, scoring, rawJson: result, usedModel });
+            } catch (err) {
+                showError(err.message);
+            } finally {
+                if (uploadedFileRef) deleteUploadedGeminiFile(uploadedFileRef.name);
+                hideLoading();
+            }
+        }
+
+        function renderHookResults({ observations, altHooks, scoring, rawJson, usedModel }) {
+            const { hookScore, verdict, scoreClass, signalScores } = scoring;
+            const firmIssues = observations.filter(o => o.confidence === "high" || o.confidence === "medium").sort((a, b) => (a.start_s ?? 0) - (b.start_s ?? 0));
+            const lowConfIssues = observations.filter(o => o.confidence === "low").sort((a, b) => (a.start_s ?? 0) - (b.start_s ?? 0));
+
+            const lanes = [];
+            const placedBlocks = firmIssues.map(obs => {
+                const start = Math.max(0, Math.min(5, Number(obs.start_s) || 0));
+                const end = Math.max(start + 0.35, Math.min(5, Number(obs.end_s) || start + 0.5));
+                let laneIdx = lanes.findIndex(laneEnd => start >= laneEnd - 0.05);
+                if (laneIdx === -1) { laneIdx = lanes.length; lanes.push(end); }
+                else { lanes[laneIdx] = end; }
+                return { obs, start, end, laneIdx };
+            });
+            const trackHeight = Math.max(44, lanes.length * 34 + 10);
+
+            let html = `
+        <div class="card">
+          <div class="score-hero">
+            <div class="score-summary-col">
+              <div class="score-circle ${scoreClass}">
+                <span class="score-num">${hookScore}</span>
+                <span class="score-caption">Hook Score</span>
+              </div>
+              <span class="score-verdict-pill ${scoreClass}">${escapeHtml(verdict)}</span>
+            </div>
+            <div>
+              <div class="card-header" style="margin-bottom: 10px;">
+                <div>
+                  <h3 class="card-title">Rubric Breakdown (Plain Code Calculation)</h3>
+                  <p class="card-subtitle">Starts at 100 · -15 high, -7 medium (1.5× if before 1.5 s) · 0 low · Observed by ${escapeHtml(usedModel)}</p>
+                </div>
+              </div>
+              <div class="signals-grid">
+                ${SIGNALS.map(sig => {
+                const val = signalScores[sig];
+                const barColor = val >= 75 ? "var(--green)" : val >= 50 ? "var(--amber)" : "var(--red)";
+                return `
+                    <div class="signal-box">
+                      <div class="signal-top"><span>${sig}</span><span>${val}</span></div>
+                      <div class="signal-bar"><div class="signal-bar-fill" style="width: ${val}%; background: ${barColor};"></div></div>
+                    </div>
+                  `;
+            }).join("")}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">0–5 s Issue Timeline</h3>
+              <p class="card-subtitle">Hover or tap any block to inspect the full issue</p>
+            </div>
+          </div>
+          <div class="timeline-wrap">
+            <div class="timeline-ruler"><span>0.0 s</span><span>1.0 s</span><span>2.0 s</span><span>3.0 s</span><span>4.0 s</span><span>5.0 s</span></div>
+            <div class="timeline-track" style="height: ${trackHeight}px;">
+              <div class="timeline-gridline" style="left: 20%;"></div>
+              <div class="timeline-gridline" style="left: 40%;"></div>
+              <div class="timeline-gridline" style="left: 60%;"></div>
+              <div class="timeline-gridline" style="left: 80%;"></div>
+              ${firmIssues.length === 0 ? `<div style="height:100%; display:flex; align-items:center; justify-content:center; font-size:12.5px; color:var(--green); font-weight:600;">No firm issues detected in 0–5 s!</div>` : ""}
+              ${placedBlocks.map(({ obs, start, end, laneIdx }) => {
+                const leftPct = (start / 5) * 100;
+                const widthPct = Math.max(10, ((end - start) / 5) * 100);
+                const clampedWidth = Math.min(widthPct, 100 - leftPct);
+                const topPx = 7 + laneIdx * 34;
+                const shortLabel = obs.signal ? obs.signal.charAt(0).toUpperCase() + obs.signal.slice(1) : "Issue";
+                const fullTooltip = `${start.toFixed(1)}–${end.toFixed(1)} s · ${shortLabel}: ${obs.issue}`;
+                return `
+                  <button type="button" class="timeline-block conf-${obs.confidence}"
+                    style="left: ${leftPct}%; width: ${clampedWidth}%; top: ${topPx}px; border: none;"
+                    title="${escapeHtml(fullTooltip)}" data-detail="${escapeHtml(fullTooltip)}">
+                    ${escapeHtml(shortLabel)}
+                  </button>
+                `;
+            }).join("")}
+            </div>
+            <div class="timeline-hover-detail" id="timelineHoverDetail">${firmIssues.length > 0 ? "Hover over a colored block above to view the full issue details." : "Timeline clear."}</div>
+            <div class="timeline-legend">
+              <span class="legend-item"><span class="legend-swatch" style="background: var(--red);"></span>High confidence (-15 pts, 1.5× &lt;1.5 s)</span>
+              <span class="legend-item"><span class="legend-swatch" style="background: var(--amber);"></span>Medium confidence (-7 pts, 1.5× &lt;1.5 s)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Observed Issues &amp; Fixes</h3>
+              <p class="card-subtitle">${firmIssues.length} firm observation${firmIssues.length === 1 ? "" : "s"} in the opening 5 seconds</p>
+            </div>
+          </div>
+          ${firmIssues.length === 0 ? `<p style="margin: 0; font-size: 13.5px; color: var(--green); font-weight: 500;">Great opening! Gemini found no high or medium confidence issues.</p>` : `
+            <div class="table-wrap">
+              <table class="issues-table">
+                <thead><tr><th style="width: 165px;">Time</th><th>Issue &amp; Evidence</th><th>Suggested Fix</th></tr></thead>
+                <tbody>
+                  ${firmIssues.map(obs => `
+                    <tr>
+                      <td>
+                        <div style="font-weight: 600; white-space: nowrap;">${Number(obs.start_s).toFixed(1)}–${Number(obs.end_s).toFixed(1)} s</div>
+                        <div style="display:flex; gap:4px; flex-wrap:wrap; margin-top:4px;">
+                          <span class="badge signal">${escapeHtml(obs.signal)}</span>
+                          <span class="badge ${obs.confidence}">${escapeHtml(obs.confidence)}</span>
+                          ${Number(obs.start_s) < 1.5 ? `<span class="badge early">1.5× early</span>` : ""}
+                        </div>
+                      </td>
+                      <td><div style="font-weight: 500;">${escapeHtml(obs.issue)}</div><div class="evidence-text">Evidence: ${escapeHtml(obs.evidence)}</div></td>
+                      <td>${escapeHtml(obs.suggested_fix)}</td>
+                    </tr>
+                  `).join("")}
+                </tbody>
+              </table>
+            </div>
+          `}
+        </div>
+      `;
+
+            if (lowConfIssues.length > 0) {
+                html += `
+          <div class="check-this-card">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <strong style="font-size: 14px; color: #3c4043;">Check this (low confidence · 0 pts deducted)</strong>
+              <span style="font-size: 12px;">Possible items to verify yourself — not counted as firm issues</span>
+            </div>
+            ${lowConfIssues.map(obs => `
+              <div class="check-this-item">
+                <div style="display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-bottom: 4px;">
+                  <strong>${Number(obs.start_s).toFixed(1)}–${Number(obs.end_s).toFixed(1)} s · ${escapeHtml(obs.signal)}</strong>
+                  <span>Low confidence</span>
+                </div>
+                <div>${escapeHtml(obs.issue)}</div>
+                <div class="evidence-text">Note: ${escapeHtml(obs.evidence)}${obs.suggested_fix ? ` · Tip: ${escapeHtml(obs.suggested_fix)}` : ""}</div>
+              </div>
+            `).join("")}
+          </div>
+        `;
+            }
+
+            html += `
+        <div class="card">
+          <div class="card-header"><div><h3 class="card-title">3 Alternative Hooks</h3><p class="card-subtitle">Stronger ways to open the first 5 seconds</p></div></div>
+          <div class="hooks-list">
+            ${altHooks.map((hook, idx) => `
+              <div class="hook-option">
+                <div><div class="nv-label">Option ${idx + 1}</div><p>"${escapeHtml(hook)}"</p></div>
+                <div><button type="button" class="btn-secondary copy-hook-btn" data-hook="${escapeHtml(hook)}">Copy hook</button></div>
+              </div>
+            `).join("")}
+          </div>
+          <details class="raw-json"><summary>View raw Gemini JSON (observations only — no score from AI)</summary><pre>${escapeHtml(JSON.stringify(rawJson, null, 2))}</pre></details>
+        </div>
+      `;
+
+            doctorResults.innerHTML = html;
+
+            const hoverDetailEl = document.getElementById("timelineHoverDetail");
+            doctorResults.querySelectorAll(".timeline-block").forEach(block => {
+                const showDetail = () => {
+                    if (hoverDetailEl) {
+                        hoverDetailEl.textContent = block.getAttribute("data-detail") || "";
+                        hoverDetailEl.style.color = "var(--text)";
+                    }
+                };
+                block.addEventListener("mouseenter", showDetail);
+                block.addEventListener("focus", showDetail);
+                block.addEventListener("click", showDetail);
+            });
+
+            doctorResults.querySelectorAll(".copy-hook-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    navigator.clipboard?.writeText(btn.getAttribute("data-hook") || "");
+                    btn.textContent = "Copied!";
+                    setTimeout(() => { btn.textContent = "Copy hook"; }, 1800);
+                });
+            });
+        }
+
+        function bindEvents() {
+            document.querySelectorAll(".tab-btn").forEach(btn => {
+                btn.addEventListener("click", () => switchTab(btn.getAttribute("data-tab")));
+            });
+            toggleKeyDrawerBtn.addEventListener("click", () => apiDrawer.classList.toggle("open"));
+            saveKeyBtn.addEventListener("click", () => {
+                state.apiKey = apiKeyInput.value.trim();
+                state.model = modelSelect.value;
+                if (state.apiKey) localStorage.setItem("creatorpulse_gemini_key", state.apiKey);
+                else localStorage.removeItem("creatorpulse_gemini_key");
+                localStorage.setItem("creatorpulse_gemini_model", state.model);
+                updateKeyStatusUI();
+                apiDrawer.classList.remove("open");
+                hideError();
+            });
+            modelSelect.addEventListener("change", () => {
+                state.model = modelSelect.value;
+                localStorage.setItem("creatorpulse_gemini_model", state.model);
+            });
+            ownDataToggle.addEventListener("change", () => {
+                state.useOwnData = ownDataToggle.checked;
+                if (state.useOwnData) {
+                    headerTitle.textContent = "CreatorPulse · My Channel (custom data)";
+                    commentsTextarea.value = state.customComments;
+                    transcriptTextarea.value = state.customTranscript;
+                    resetSampleCommentsBtn.style.display = "inline-flex";
+                    resetSampleHookBtn.style.display = "inline-flex";
+                } else {
+                    state.customComments = commentsTextarea.value;
+                    state.customTranscript = transcriptTextarea.value;
+                    headerTitle.textContent = "CreatorPulse · Python for Beginners (sample channel)";
+                    commentsTextarea.value = SAMPLE_COMMENTS;
+                    transcriptTextarea.value = SAMPLE_TRANSCRIPT;
+                    resetSampleCommentsBtn.style.display = "none";
+                    resetSampleHookBtn.style.display = "none";
+                    clearUploadedVideo();
+                }
+                updateCommentCount();
+                minerResults.innerHTML = "";
+                doctorResults.innerHTML = "";
+                hideError();
+            });
+            commentsTextarea.addEventListener("input", () => {
+                if (state.useOwnData) state.customComments = commentsTextarea.value;
+                updateCommentCount();
+            });
+            transcriptTextarea.addEventListener("input", () => {
+                if (state.useOwnData) state.customTranscript = transcriptTextarea.value;
+            });
+            resetSampleCommentsBtn.addEventListener("click", () => { ownDataToggle.checked = false; ownDataToggle.dispatchEvent(new Event("change")); });
+            resetSampleHookBtn.addEventListener("click", () => { ownDataToggle.checked = false; ownDataToggle.dispatchEvent(new Event("change")); });
+            clearFeedbackContextBtn.addEventListener("click", () => { state.feedbackContext = null; feedbackContextBanner.classList.remove("visible"); });
+            closeErrorBtn.addEventListener("click", hideError);
+            mineCommentsBtn.addEventListener("click", handleMineComments);
+            analyzeHookBtn.addEventListener("click", handleAnalyzeHook);
+            chooseVideoBtn.addEventListener("click", () => videoFileInput.click());
+            clearVideoBtn.addEventListener("click", clearUploadedVideo);
+
+            videoFileInput.addEventListener("change", () => {
+                const file = videoFileInput.files?.[0];
+                if (!file) return;
+                hideError();
+                const objUrl = URL.createObjectURL(file);
+                const probe = document.createElement("video");
+                probe.preload = "metadata";
+                probe.onloadedmetadata = () => {
+                    const dur = probe.duration;
+                    if (!Number.isFinite(dur) || dur >= 30) {
+                        URL.revokeObjectURL(objUrl);
+                        videoFileInput.value = "";
+                        showError(`Please upload a short video under 30 seconds (selected clip is ${Number.isFinite(dur) ? dur.toFixed(1) + " s" : "too long"}).`);
+                        return;
+                    }
+                    if (state.uploadedVideoUrl) URL.revokeObjectURL(state.uploadedVideoUrl);
+                    state.uploadedVideoFile = file;
+                    state.uploadedVideoDuration = dur;
+                    state.uploadedVideoUrl = objUrl;
+                    videoPreview.src = objUrl;
+                    videoPreviewWrap.classList.add("visible");
+                    clearVideoBtn.style.display = "inline-flex";
+                    videoFileStatus.textContent = `Selected: ${file.name} (${dur.toFixed(1)} s, ${(file.size / (1024 * 1024)).toFixed(1)} MB)`;
+                    hookInputModeLabel.textContent = `Mode: Uploaded video (${dur.toFixed(1)} s) sent to Gemini`;
+                };
+                probe.onerror = () => {
+                    URL.revokeObjectURL(objUrl);
+                    videoFileInput.value = "";
+                    showError("Could not read video metadata. Please choose a valid MP4, WebM, or MOV video under 30 s.");
+                };
+                probe.src = objUrl;
+            });
+        }
+
+        function clearUploadedVideo() {
+            if (state.uploadedVideoUrl) URL.revokeObjectURL(state.uploadedVideoUrl);
+            state.uploadedVideoFile = null;
+            state.uploadedVideoDuration = null;
+            state.uploadedVideoUrl = null;
+            videoFileInput.value = "";
+            videoPreview.removeAttribute("src");
+            videoPreviewWrap.classList.remove("visible");
+            clearVideoBtn.style.display = "none";
+            videoFileStatus.textContent = "";
+            hookInputModeLabel.textContent = "Mode: Opening transcript (0–5 s)";
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
